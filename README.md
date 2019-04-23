@@ -14,7 +14,7 @@ ConvenientBanner
 
 demo是用Module方式依赖，你也可以使用gradle 依赖:
 ```java
-   implementation 'com.github.Learzhu:Android-ConvenientBanner:1.0'
+   implementation 'com.github.Learzhu:Android-ConvenientBanner:1.1'
 //compile 'com.bigkoo:ConvenientBanner:2.1.4'//地址变ConvenientBanner 大写了，额。。。
 //compile 'com.bigkoo:convenientbanner:2.0.5'旧版
 ```
