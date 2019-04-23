@@ -3,19 +3,20 @@
 ConvenientBanner
 ===========
 
-Í¨ÓÃµÄ¹ã¸æÀ¸¿Ø¼ş£¬ÈÃÄãÇáËÉÊµÏÖ¹ã¸æÍ·Ğ§¹û¡£Ö§³ÖÎŞÏŞÑ­»·£¬¿ÉÒÔÉèÖÃ×Ô¶¯·­Ò³ºÍÊ±¼ä(¶øÇÒ·Ç³£ÖÇÄÜ£¬ÊÖÖ¸´¥ÅöÔòÔİÍ£·­Ò³£¬Àë¿ª×Ô¶¯¿ªÊ¼·­Ò³¡£ÄãÒ²¿ÉÒÔÉèÖÃÔÚ½çÃæonPauseµÄÊ±ºò²»½øĞĞ×Ô¶¯·­Ò³£¬onResumeÖ®ºó¼ÌĞø×Ô¶¯·­Ò³)£¬²¢ÇÒÌá¹©¶àÖÖ·­Ò³ÌØĞ§¡£
-¶Ô±ÈÆäËû¹ã¸æÀ¸¿Ø¼ş£¬´ó¶à¶¼ĞèÒª¶ÔÔ´Âë½øĞĞ¸Ä¶¯²ÅÄÜ¼ÓÔØÍøÂçÍ¼Æ¬£¬»òÕß°ïÄã¼¯³É²»ÊÇÄãËùĞèÒªµÄÍ¼Æ¬»º´æ¿â¡£¶øÕâ¸ö¿âÄÜÈÃÓĞ´úÂë½àñ±µÄÄã»¶Ï²£¬²»ĞèÒª¶Ô¿âÔ´Âë½øĞĞĞŞ¸ÄÄã¾Í¿ÉÒÔÊ¹ÓÃÈÎºÎÄãÏ²»¶µÄÍøÂçÍ¼Æ¬¿â½øĞĞÅäºÏ¡£
+é€šç”¨çš„å¹¿å‘Šæ æ§ä»¶ï¼Œè®©ä½ è½»æ¾å®ç°å¹¿å‘Šå¤´æ•ˆæœã€‚æ”¯æŒæ— é™å¾ªç¯ï¼Œå¯ä»¥è®¾ç½®è‡ªåŠ¨ç¿»é¡µå’Œæ—¶é—´(è€Œä¸”éå¸¸æ™ºèƒ½ï¼Œæ‰‹æŒ‡è§¦ç¢°åˆ™æš‚åœç¿»é¡µï¼Œç¦»å¼€è‡ªåŠ¨å¼€å§‹ç¿»é¡µã€‚ä½ ä¹Ÿå¯ä»¥è®¾ç½®åœ¨ç•Œé¢onPauseçš„æ—¶å€™ä¸è¿›è¡Œè‡ªåŠ¨ç¿»é¡µï¼ŒonResumeä¹‹åç»§ç»­è‡ªåŠ¨ç¿»é¡µ)ï¼Œå¹¶ä¸”æä¾›å¤šç§ç¿»é¡µç‰¹æ•ˆã€‚
+å¯¹æ¯”å…¶ä»–å¹¿å‘Šæ æ§ä»¶ï¼Œå¤§å¤šéƒ½éœ€è¦å¯¹æºç è¿›è¡Œæ”¹åŠ¨æ‰èƒ½åŠ è½½ç½‘ç»œå›¾ç‰‡ï¼Œæˆ–è€…å¸®ä½ é›†æˆä¸æ˜¯ä½ æ‰€éœ€è¦çš„å›¾ç‰‡ç¼“å­˜åº“ã€‚è€Œè¿™ä¸ªåº“èƒ½è®©æœ‰ä»£ç æ´ç™–çš„ä½ æ¬¢å–œï¼Œä¸éœ€è¦å¯¹åº“æºç è¿›è¡Œä¿®æ”¹ä½ å°±å¯ä»¥ä½¿ç”¨ä»»ä½•ä½ å–œæ¬¢çš„ç½‘ç»œå›¾ç‰‡åº“è¿›è¡Œé…åˆã€‚
 
 ## Demo
-ÓÃÄ£ÄâÆ÷ÔËĞĞµÄĞ§¹û£¬Êó±ê²¦¶¯ºÍÄ£ÄâÆ÷Ì«¿¨µÈÔ­Òò£¬Êµ¼ÊĞ§¹û±ÈĞ§¹ûÍ¼¸üìÅÅ¶¡«¡«
+ç”¨æ¨¡æ‹Ÿå™¨è¿è¡Œçš„æ•ˆæœï¼Œé¼ æ ‡æ‹¨åŠ¨å’Œæ¨¡æ‹Ÿå™¨å¤ªå¡ç­‰åŸå› ï¼Œå®é™…æ•ˆæœæ¯”æ•ˆæœå›¾æ›´ç‚«å“¦ï½ï½
 ![](https://github.com/saiwu-bigkoo/Android-ConvenientBanner/blob/master/preview/convenientbannerdemo.gif)
 
-- [demo´úÂëÇë¿´´ÁÕâÀï](https://github.com/saiwu-bigkoo/Android-ConvenientBanner/blob/master/app/src/main/java/com/bigkoo/convenientbannerdemo/MainActivity.java)
+- [demoä»£ç è¯·çœ‹æˆ³è¿™é‡Œ](https://github.com/saiwu-bigkoo/Android-ConvenientBanner/blob/master/app/src/main/java/com/bigkoo/convenientbannerdemo/MainActivity.java)
 
-demoÊÇÓÃModule·½Ê½ÒÀÀµ£¬ÄãÒ²¿ÉÒÔÊ¹ÓÃgradle ÒÀÀµ:
+demoæ˜¯ç”¨Moduleæ–¹å¼ä¾èµ–ï¼Œä½ ä¹Ÿå¯ä»¥ä½¿ç”¨gradle ä¾èµ–:
 ```java
-   compile 'com.bigkoo:ConvenientBanner:2.1.4'//µØÖ·±äConvenientBanner ´óĞ´ÁË£¬¶î¡£¡£¡£
-//compile 'com.bigkoo:convenientbanner:2.0.5'¾É°æ
+	implementation 'com.github.Learzhu:Android-ConvenientBanner:Tag'
+   compile 'com.bigkoo:ConvenientBanner:2.1.4'//åœ°å€å˜ConvenientBanner å¤§å†™äº†ï¼Œé¢ã€‚ã€‚ã€‚
+//compile 'com.bigkoo:convenientbanner:2.0.5'æ—§ç‰ˆ
 ```
 
 
@@ -27,14 +28,14 @@ demoÊÇÓÃModule·½Ê½ÒÀÀµ£¬ÄãÒ²¿ÉÒÔÊ¹ÓÃgradle ÒÀÀµ:
         android:id="@+id/convenientBanner"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:canLoop="true" //¿ØÖÆÑ­»·Óë·ñ
+        app:canLoop="true" //æ§åˆ¶å¾ªç¯ä¸å¦
 />
 ```
 
 ### config in java code
 
 ```java
-//×Ô¶¨ÒåÄãµÄHolder£¬ÊµÏÖ¸ü¶à¸´ÔÓµÄ½çÃæ£¬²»Ò»¶¨ÊÇÍ¼Æ¬·­Ò³£¬ÆäËûÈÎºÎ¿Ø¼ş·­Ò³Òà¿É¡£
+//è‡ªå®šä¹‰ä½ çš„Holderï¼Œå®ç°æ›´å¤šå¤æ‚çš„ç•Œé¢ï¼Œä¸ä¸€å®šæ˜¯å›¾ç‰‡ç¿»é¡µï¼Œå…¶ä»–ä»»ä½•æ§ä»¶ç¿»é¡µäº¦å¯ã€‚
 convenientBanner.setPages(
                 new CBViewHolderCreator() {
                     @Override
@@ -47,12 +48,12 @@ convenientBanner.setPages(
                         return R.layout.item_localimage;
                     }
                 }, localImages)
-                //ÉèÖÃÁ½¸öµãÍ¼Æ¬×÷Îª·­Ò³Ö¸Ê¾Æ÷£¬²»ÉèÖÃÔòÃ»ÓĞÖ¸Ê¾Æ÷£¬¿ÉÒÔ¸ù¾İ×Ô¼ºĞèÇó×ÔĞĞÅäºÏ×Ô¼ºµÄÖ¸Ê¾Æ÷,²»ĞèÒªÔ²µãÖ¸Ê¾Æ÷¿ÉÓÃ²»Éè
+                //è®¾ç½®ä¸¤ä¸ªç‚¹å›¾ç‰‡ä½œä¸ºç¿»é¡µæŒ‡ç¤ºå™¨ï¼Œä¸è®¾ç½®åˆ™æ²¡æœ‰æŒ‡ç¤ºå™¨ï¼Œå¯ä»¥æ ¹æ®è‡ªå·±éœ€æ±‚è‡ªè¡Œé…åˆè‡ªå·±çš„æŒ‡ç¤ºå™¨,ä¸éœ€è¦åœ†ç‚¹æŒ‡ç¤ºå™¨å¯ç”¨ä¸è®¾
 //                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
                 .setOnItemClickListener(this);
-                //ÉèÖÃÖ¸Ê¾Æ÷µÄ·½Ïò
+                //è®¾ç½®æŒ‡ç¤ºå™¨çš„æ–¹å‘
 //                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
-//                .setOnPageChangeListener(this)//¼àÌı·­Ò³ÊÂ¼ş
+//                .setOnPageChangeListener(this)//ç›‘å¬ç¿»é¡µäº‹ä»¶
                 ;
 
 public class LocalImageHolderView implements Holder<Integer>{
@@ -78,35 +79,35 @@ public class LocalImageHolderView implements Holder<Integer>{
 - [LoopingViewPager](https://github.com/imbryk/LoopingViewPager)
 - [RecyclerViewCardGallery](https://github.com/zjw-swun/RecyclerViewCardGallery)
 
->## ¸üĞÂËµÃ÷
+>## æ›´æ–°è¯´æ˜
 
 >v2.1.4
- -  Êı¾İÎª¿ÕµÄÊ±ºòÒì³£´¦Àí¡£<br />
+ -  æ•°æ®ä¸ºç©ºçš„æ—¶å€™å¼‚å¸¸å¤„ç†ã€‚<br />
 
 >v2.1.3
- -  notifyDataSetChangeµÄÊ±ºò£¬»Øµ½0µÄÎ»ÖÃ¡£<br />
+ -  notifyDataSetChangeçš„æ—¶å€™ï¼Œå›åˆ°0çš„ä½ç½®ã€‚<br />
 
 
 >v2.1.2
- -  ¿ÉÒÔsetlayoutManagerÁË¡£<br />
+ -  å¯ä»¥setlayoutManageräº†ã€‚<br />
 
 >v2.1.1
- -  ÄÚ²¿ÊµÏÖ¸ÄÎªÓÉ×Ô¶¨ÒåµÄLinearSnapHelper¸ÄÎªPagerSnapHelper¡£<br />
+ -  å†…éƒ¨å®ç°æ”¹ä¸ºç”±è‡ªå®šä¹‰çš„LinearSnapHelperæ”¹ä¸ºPagerSnapHelperã€‚<br />
 
 >v2.1.0
- -  ĞŞ¸´²»ÉèÖÃÖ¸Ê¾Æ÷¾Í±¨´íÎÊÌâ<br />
+ -  ä¿®å¤ä¸è®¾ç½®æŒ‡ç¤ºå™¨å°±æŠ¥é”™é—®é¢˜<br />
 
 >v2.0.9
- -  ±©Â¶canLoopµÄAPI¶¯Ì¬¿ØÖÆ<br />
+ -  æš´éœ²canLoopçš„APIåŠ¨æ€æ§åˆ¶<br />
 
 >v2.0.8
- - ¼ÓÈë×÷ÎªÁĞ±í¶¥²¿header demo£¬ĞŞ¸´loopÄ£Ê½ÏÂµÚÒ»´ÎµÄÖ¸Ê¾Æ÷Í¼±ê²»Ñ¡ÖĞÎÊÌâ <br />
+ - åŠ å…¥ä½œä¸ºåˆ—è¡¨é¡¶éƒ¨header demoï¼Œä¿®å¤loopæ¨¡å¼ä¸‹ç¬¬ä¸€æ¬¡çš„æŒ‡ç¤ºå™¨å›¾æ ‡ä¸é€‰ä¸­é—®é¢˜ <br />
 
 >v2.0.7
- - ¼ÓÈëÓëPhotoView£¬FrescoÅäºÏ±äÎªÍøÂçÍ¼Æ¬Ô¤ÀÀ¿Ø¼şÀı×Ó£¬ĞÂÔö»ñÈ¡ºÍÉèÖÃµ±Ç°position api <br />
+ - åŠ å…¥ä¸PhotoViewï¼ŒFrescoé…åˆå˜ä¸ºç½‘ç»œå›¾ç‰‡é¢„è§ˆæ§ä»¶ä¾‹å­ï¼Œæ–°å¢è·å–å’Œè®¾ç½®å½“å‰position api <br />
 
 >v2.0.6
- - Ê¹ÓÃRecycleView½øĞĞÖØĞÂÊµÏÖ£¬api»ù±¾²»¸Ä±ä£¬¼ÓÈëxmlÅäÖÃ·­Ò³Ê±¼ä <br />
+ - ä½¿ç”¨RecycleViewè¿›è¡Œé‡æ–°å®ç°ï¼ŒapiåŸºæœ¬ä¸æ”¹å˜ï¼ŒåŠ å…¥xmlé…ç½®ç¿»é¡µæ—¶é—´ <br />
 
 >v2.0.5
- - ViewPagerÊµÏÖ·½Ê½ <br />
+ - ViewPagerå®ç°æ–¹å¼ <br />
