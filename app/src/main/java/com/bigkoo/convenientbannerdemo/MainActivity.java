@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 //                .setOnItemClickListener(this);
 //        listView.addHeaderView(mConvenientBanner);
 
-        testRoundCorner();
+//        testRoundCorner();
+        testRoundCornerImageView();
     }
 
     private void testLocalImgs() {
@@ -128,6 +129,27 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         RecyclerViewCornerRadius recyclerViewCornerRadius = new RecyclerViewCornerRadius(cbLoopViewPager);
         recyclerViewCornerRadius.setCornerRadius(30);
         cbLoopViewPager.addItemDecoration(recyclerViewCornerRadius);
+    }
+
+    /**
+     * 测试圆角矩形图片
+     */
+    private void testRoundCornerImageView() {
+        CBLoopViewPager cbLoopViewPager = convenientBanner.setPages(new CBViewHolderCreator() {
+            @Override
+            public LocalRoundImageHolderView createHolder(View itemView) {
+                return new LocalRoundImageHolderView(itemView);
+            }
+
+            @Override
+            public int getLayoutId() {
+                return R.layout.view_round_imageview;
+            }
+        }, localImages).setIndicatorMargin(null, null, 20, 10).setOnItemClickListener(this)
+                .getViewPager();
+//        RecyclerViewCornerRadius recyclerViewCornerRadius = new RecyclerViewCornerRadius(cbLoopViewPager);
+//        recyclerViewCornerRadius.setCornerRadius(30);
+//        cbLoopViewPager.addItemDecoration(recyclerViewCornerRadius);
     }
 
     //    //初始化网络图片缓存库
@@ -212,4 +234,5 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         startActivity(new Intent(this, HeaderActivity.class));
 //        convenientBanner.setCanLoop(!convenientBanner.isCanLoop());
     }
+
 }

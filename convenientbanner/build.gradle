@@ -25,7 +25,7 @@ android {
 
 allprojects {
     tasks.withType(Javadoc) {//兼容中文字符
-        options{
+        options {
             encoding "UTF-8"
             charSet 'UTF-8'
             links "http://docs.oracle.com/javase/7/docs/api"
@@ -42,5 +42,6 @@ publish {
 }
 
 dependencies {
-    implementation ('com.android.support:recyclerview-v7:27.0.2')
+    implementation('com.android.support:recyclerview-v7:27.0.2')
+    implementation 'com.android.support:appcompat-v7:27.0.2'
 }
