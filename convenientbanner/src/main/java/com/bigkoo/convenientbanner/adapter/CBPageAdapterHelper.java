@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.bigkoo.convenientbanner.utils.ScreenUtil;
 
 /**
@@ -12,16 +11,37 @@ import com.bigkoo.convenientbanner.utils.ScreenUtil;
  * Created by jameson on 9/1/16.
  * changed by 二精-霁雪清虹 on 2017/11/19
  * changed by Sai on 2018/04/25
+ *
+ * @des 修复某些情况下 parent.getWidth 返回值为0
  */
 public class CBPageAdapterHelper {
     public static int sPagePadding = 0;
     public static int sShowLeftCardWidth = 0;
 
-    public void onCreateViewHolder(ViewGroup parent, View itemView) {
-        RecyclerView.LayoutParams lp = (RecyclerView.LayoutParams) itemView.getLayoutParams();
+    //    public void onCreateViewHolder(ViewGroup parent, View itemView) {
+//        RecyclerView.LayoutParams lp = (RecyclerView.LayoutParams) itemView.getLayoutParams();
+//        lp.width = parent.getWidth() - ScreenUtil.dip2px(itemView.getContext(), 2 * (sPagePadding + sShowLeftCardWidth));
+//        itemView.setLayoutParams(lp);
+//    }
+    public void onCreateViewHolder(final ViewGroup parent, final View itemView) {
+        final RecyclerView.LayoutParams lp = (RecyclerView.LayoutParams) itemView.getLayoutParams();
         lp.width = parent.getWidth() - ScreenUtil.dip2px(itemView.getContext(), 2 * (sPagePadding + sShowLeftCardWidth));
+        final int parentWidth = parent.getMeasuredWidth();
+        if (parentWidth == 0) {
+            parent.post(new Runnable() {
+                @Override
+                public void run() {
+                    lp.width = parent.getMeasuredWidth() - ScreenUtil.dip2px(itemView.getContext(), 2 * (sPagePadding + sShowLeftCardWidth));
+                    itemView.setLayoutParams(lp);
+                }
+            });
+            return;
+        }
+        lp.width = parentWidth - ScreenUtil.dip2px(itemView.getContext(), 2 * (sPagePadding + sShowLeftCardWidth));
+        itemView.setLayoutParams(lp);
         itemView.setLayoutParams(lp);
     }
+
 
     public void onBindViewHolder(View itemView, final int position, int itemCount) {
         int padding = ScreenUtil.dip2px(itemView.getContext(), sPagePadding);

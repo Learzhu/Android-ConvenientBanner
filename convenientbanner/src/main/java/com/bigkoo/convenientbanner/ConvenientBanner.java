@@ -29,6 +29,7 @@ import java.util.List;
  * 支持无限循环，自动翻页，翻页特效
  *
  * @author Sai 支持自动翻页
+ * @des 设置指示器偏移
  */
 public class ConvenientBanner<T> extends RelativeLayout {
     private List<T> mDatas;
@@ -67,8 +68,8 @@ public class ConvenientBanner<T> extends RelativeLayout {
     private void init(Context context) {
         View hView = LayoutInflater.from(context).inflate(
                 R.layout.include_viewpager, this, true);
-        viewPager = (CBLoopViewPager)hView.findViewById(R.id.cbLoopViewPager);
-        loPageTurningPoint = (ViewGroup)hView
+        viewPager = (CBLoopViewPager) hView.findViewById(R.id.cbLoopViewPager);
+        loPageTurningPoint = (ViewGroup) hView
                 .findViewById(R.id.loPageTurningPoint);
 
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
@@ -83,6 +84,7 @@ public class ConvenientBanner<T> extends RelativeLayout {
         viewPager.setLayoutManager(layoutManager);
         return this;
     }
+
     public ConvenientBanner setPages(CBViewHolderCreator holderCreator, List<T> datas) {
         this.mDatas = datas;
         pageAdapter = new CBPageAdapter(holderCreator, mDatas, canLoop);
@@ -97,19 +99,25 @@ public class ConvenientBanner<T> extends RelativeLayout {
         return this;
     }
 
-    public ConvenientBanner setCanLoop(boolean canLoop){
+    public ConvenientBanner setCanLoop(boolean canLoop) {
         this.canLoop = canLoop;
         pageAdapter.setCanLoop(canLoop);
         notifyDataSetChanged();
         return this;
     }
 
-    public boolean isCanLoop(){
+    public boolean isCanLoop() {
         return canLoop;
     }
 
-
-
+    /**
+     * 放开ViewPager方便修改圆角矩形
+     *
+     * @return
+     */
+    public CBLoopViewPager getViewPager() {
+        return viewPager;
+    }
 
     /**
      * 通知数据变化
@@ -145,7 +153,7 @@ public class ConvenientBanner<T> extends RelativeLayout {
             // 翻页指示的点
             ImageView pointView = new ImageView(getContext());
             pointView.setPadding(5, 0, 5, 0);
-            if (cbLoopScaleHelper.getFirstItemPos()%mDatas.size()==count)
+            if (cbLoopScaleHelper.getFirstItemPos() % mDatas.size() == count)
                 pointView.setImageResource(page_indicatorId[1]);
             else
                 pointView.setImageResource(page_indicatorId[0]);
@@ -196,29 +204,34 @@ public class ConvenientBanner<T> extends RelativeLayout {
 
     /**
      * 获取当前页对应的position
+     *
      * @return
      */
     public int getCurrentItem() {
         return cbLoopScaleHelper.getRealCurrentItem();
     }
+
     /**
      * 设置当前页对应的position
+     *
      * @return
      */
     public ConvenientBanner setCurrentItem(int position, boolean smoothScroll) {
-        cbLoopScaleHelper.setCurrentItem(canLoop ? mDatas.size()+position : position, smoothScroll);
+        cbLoopScaleHelper.setCurrentItem(canLoop ? mDatas.size() + position : position, smoothScroll);
         return this;
     }
 
     /**
      * 设置第一次加载当前页对应的position
      * setPageIndicator之前使用
+     *
      * @return
      */
     public ConvenientBanner setFirstItemPos(int position) {
-        cbLoopScaleHelper.setFirstItemPos(canLoop ? mDatas.size()+position : position);
+        cbLoopScaleHelper.setFirstItemPos(canLoop ? mDatas.size() + position : position);
         return this;
     }
+
     /**
      * 指示器的方向
      *
@@ -315,4 +328,30 @@ public class ConvenientBanner<T> extends RelativeLayout {
 //        startTurning(autoTurningTime);
 //    }
 
+    /**
+     * 设置指示器偏移
+     *
+     * @param leftMargin
+     * @param topMargin
+     * @param rightMargin
+     * @param bottomMargin
+     * @return
+     */
+    public ConvenientBanner setIndicatorMargin(Integer leftMargin, Integer topMargin, Integer rightMargin, Integer bottomMargin) {
+        ViewGroup.MarginLayoutParams layoutParams = (MarginLayoutParams) loPageTurningPoint.getLayoutParams();
+        if (leftMargin != null) {
+            layoutParams.leftMargin = leftMargin;
+        }
+        if (topMargin != null) {
+            layoutParams.topMargin = topMargin;
+        }
+        if (rightMargin != null) {
+            layoutParams.rightMargin = rightMargin;
+        }
+        if (bottomMargin != null) {
+            layoutParams.bottomMargin = bottomMargin;
+        }
+        loPageTurningPoint.setLayoutParams(layoutParams);
+        return this;
+    }
 }

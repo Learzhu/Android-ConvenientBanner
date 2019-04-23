@@ -1,19 +1,17 @@
 package com.bigkoo.convenientbannerdemo;
 
 import android.content.Intent;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.bigkoo.convenientbanner.view.CBLoopViewPager;
+import com.bigkoo.convenientbanner.view.RecyclerViewCornerRadius;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -50,29 +48,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         convenientBanner = (ConvenientBanner) findViewById(R.id.convenientBanner);
     }
 
-    private void init(){
+    private void init() {
 //        initImageLoader();
         loadTestDatas();
-        //本地图片例子
-        convenientBanner.setPages(
-                new CBViewHolderCreator() {
-                    @Override
-                    public LocalImageHolderView createHolder(View itemView) {
-                        return new LocalImageHolderView(itemView);
-                    }
+//        testLocalImgs();
 
-                    @Override
-                    public int getLayoutId() {
-                        return R.layout.item_localimage;
-                    }
-                }, localImages)
-                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
-                .setOnItemClickListener(this);
-                //设置指示器的方向
+        //设置指示器的方向
 //                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
 //                .setOnPageChangeListener(this)//监听翻页事件
-                ;
+        ;
 
 //        convenientBanner.setManualPageable(false);//设置不能手动影响
 
@@ -84,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 //                return new NetworkImageHolderView();
 //            }
 //        },networkImages);
-
 
 
 //手动New并且添加到ListView Header的例子
@@ -103,9 +86,51 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 //                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
 //                .setOnItemClickListener(this);
 //        listView.addHeaderView(mConvenientBanner);
+
+        testRoundCorner();
     }
 
-//    //初始化网络图片缓存库
+    private void testLocalImgs() {
+        //本地图片例子
+        convenientBanner.setPages(
+                new CBViewHolderCreator() {
+                    @Override
+                    public LocalImageHolderView createHolder(View itemView) {
+                        return new LocalImageHolderView(itemView);
+                    }
+
+                    @Override
+                    public int getLayoutId() {
+                        return R.layout.item_localimage;
+                    }
+                }, localImages)
+                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+//                .setPageIndicator(new int[]{R.drawable.ic_page_indicator, R.drawable.ic_page_indicator_focused})
+                .setOnItemClickListener(this);
+    }
+
+    /**
+     * 测试圆角矩形图片
+     */
+    private void testRoundCorner() {
+        CBLoopViewPager cbLoopViewPager = convenientBanner.setPages(new CBViewHolderCreator() {
+            @Override
+            public LocalImageHolderView createHolder(View itemView) {
+                return new LocalImageHolderView(itemView);
+            }
+
+            @Override
+            public int getLayoutId() {
+                return R.layout.item_localimage;
+            }
+        }, localImages).setIndicatorMargin(null, null, 20, 10).setOnItemClickListener(this)
+                .getViewPager();
+        RecyclerViewCornerRadius recyclerViewCornerRadius = new RecyclerViewCornerRadius(cbLoopViewPager);
+        recyclerViewCornerRadius.setCornerRadius(30);
+        cbLoopViewPager.addItemDecoration(recyclerViewCornerRadius);
+    }
+
+    //    //初始化网络图片缓存库
 //    private void initImageLoader(){
 //        //网络图片例子,结合常用的图片缓存库UIL,你可以根据自己需求自己换其他网络图片库
 //        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder().
@@ -127,7 +152,6 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         //本地图片集合
         for (int position = 0; position < 7; position++)
             localImages.add(getResId("ic_test_" + position, R.drawable.class));
-
 
 ////        //各种翻页效果
 //        transformerList.add(DefaultTransformer.class.getSimpleName());
@@ -173,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         convenientBanner.startTurning();
     }
 
-     // 停止自动翻页
+    // 停止自动翻页
     @Override
     protected void onPause() {
         super.onPause();
@@ -184,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(this,"点击了第"+position+"个",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "点击了第" + position + "个", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, HeaderActivity.class));
 //        convenientBanner.setCanLoop(!convenientBanner.isCanLoop());
     }
